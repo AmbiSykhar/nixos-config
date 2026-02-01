@@ -1,9 +1,0 @@
-#! /nix/store/f15k3dpilmiyv6zgpib289rnjykgr1r4-bash-5.3p9/bin/bash -e
-export OUT='/nix/store/x0aglb3ikq9gs12nxvsa1fsd4gyrswmc-nixos-system-ambi-laptop-26.05.20260126.bfc1b8a'
-export TOPLEVEL='/nix/store/x0aglb3ikq9gs12nxvsa1fsd4gyrswmc-nixos-system-ambi-laptop-26.05.20260126.bfc1b8a'
-export DISTRO_ID='nixos'
-export INSTALL_BOOTLOADER='/nix/store/cs81y0cm7fq38d3wqw3pybmv65vi2fn7-install-systemd-boot.sh'
-export PRE_SWITCH_CHECK='/nix/store/mw58cpgski3kxwf2mks5xy98pj0fych9-pre-switch-checks/bin/pre-switch-checks'
-export LOCALE_ARCHIVE='/nix/store/98661jgb955g9r2ximb0dss7d325vkx0-glibc-locales-2.42-47/lib/locale/locale-archive'
-export SYSTEMD='/nix/store/5j9cg6adv3d2l403fcfklz4lmf9fd0l8-systemd-258.3'
-exec -a "$0" "/nix/store/x0aglb3ikq9gs12nxvsa1fsd4gyrswmc-nixos-system-ambi-laptop-26.05.20260126.bfc1b8a/bin/.switch-to-configuration-wrapped"  "$@" 
