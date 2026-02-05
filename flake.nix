@@ -64,6 +64,11 @@
         pkgs = pkgsFor.x86_64-linux;
         extraSpecialArgs = { inherit inputs outputs; };
       };
+      "zygan@ambi-laptop" = lib.homeManagerConfiguration {
+        modules = [ ./home/zygan/ambi-laptop.nix ];
+        pkgs = pkgsFor.x86_64-linux;
+        extraSpecialArgs = { inherit inputs outputs; };
+      };
     };
   };
 }

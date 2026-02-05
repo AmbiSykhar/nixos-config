@@ -13,6 +13,7 @@
     ./hardware-configuration.nix
 
     ../../users/ambi
+    ../../users/zygan
 
     ../common/global
   ];

@@ -1,7 +1,7 @@
 { pkgs, config, lib, ... }:
 
 {
-  users.users.ambi = {
+  users.users.zygan = {
     isNormalUser = true;
     shell = pkgs.fish;
     extraGroups = [
@@ -9,7 +9,7 @@
       "openrazer"
       "wheel"
     ];
-    initialPassword = "ambi";
+    initialPassword = "zygan";
 
     packages = [ pkgs.home-manager ];
   };
