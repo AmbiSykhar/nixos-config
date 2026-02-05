@@ -43,8 +43,8 @@
     devShells = forEachSystem (pkgs: import ./shell.nix { inherit pkgs; });
 
     nixosConfigurations = {
-      "ambi-pc" = lib.nixosSystem {
-        modules = [ ./hosts/ambi-pc ];
+      "dragon" = lib.nixosSystem {
+        modules = [ ./hosts/dragon ];
         specialArgs = { inherit inputs outputs; };
       };
       "ambi-laptop" = lib.nixosSystem {
@@ -54,8 +54,8 @@
     };
 
     homeConfigurations = {
-      "ambi@ambi-pc" = lib.homeManagerConfiguration {
-        modules = [ ./home/ambi/ambi-pc.nix ];
+      "ambi@dragon" = lib.homeManagerConfiguration {
+        modules = [ ./home/ambi/dragon.nix ];
         pkgs = pkgsFor.x86_64-linux;
         extraSpecialArgs = { inherit inputs outputs; };
       };

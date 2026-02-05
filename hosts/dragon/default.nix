@@ -27,7 +27,7 @@
   ];
 
   networking = {
-    hostName = "ambi-pc";
+    hostName = "dragon";
     networkmanager.enable = true;
   };
 
