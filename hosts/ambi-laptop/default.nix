@@ -53,110 +53,21 @@
   #  options = [ "nofail" ];
   #};
 
-  # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users = {
-    ambi = {
-      isNormalUser = true;
-      description = "Alayna Beasley";
-      extraGroups = [ "networkmanager" "wheel" ];
-      packages = with pkgs; [];
-    };
-    vivi = {
-      isNormalUser = true;
-      description = "Vivian Peterson";
-      extraGroups = [ "networkmanager" "wheel" ];
-      packages = with pkgs; [];
-    };
-    zygan = {
-      isNormalUser = true;
-      description = "Matthew Michelsen";
-      extraGroups = [ "networkmanager" "wheel" ];
-      packages = with pkgs; [];
-    };
-  };
-
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    # CLI Utilities
-    eza
-    fishPlugins.tide
-    helix
-    hyfetch
-    nodePackages.nodejs
-    p7zip
-    superfile
-
-    # Neovim Plugins
-    vimPlugins.lazy-nvim
-    vimPlugins.lualine-nvim
-    vimPlugins.oil-nvim
-    vimPlugins.mini-icons
-    vimPlugins.nvim-web-devicons
-
-    # Gaming
-    #archipelago
-    itch
-    lutris
-    melonDS
-    mgba
-    #poptracker
-    #prismlauncher
-    #vintagestory
-    #xivlauncher
-
-    # Misc GUI Applications
-    bitwarden-desktop
-    freetube
-    muse-sounds-manager
-    musescore
-    pavucontrol
-
-    # Social
-    vesktop
-
-    # Development
-    jetbrains.clion
-    jetbrains.rider
-
-    # Hardware
-
-    # Browser
-    floorp-bin
-
-    # Desktop Environment
-    egl-wayland
-    fuzzel
-    kitty
-    libnotify
-    mako
-    nautilus
-    swaybg
-    swayidle
-    swaylock
     tuigreet
-    wttrbar
-    xwayland-satellite
-
-    # Misc Utilities
-    cliphist
     home-manager
   ];
 
   programs = {
-    bat.enable = true;
     fish.enable = true;
     gamemode.enable = true;
-    git.enable = true;
-    htop.enable = true;
     neovim.enable = true;
     niri.enable = true;
-    thunderbird.enable = true;
-    vscode.enable = true;
-    waybar.enable = true;
 
     bash = {
       interactiveShellInit = ''
@@ -172,14 +83,6 @@
       remotePlay.openFirewall = true;
       dedicatedServer.openFirewall = true;
       protontricks.enable = true;
-    };
-
-    tmux = {
-      enable = true;
-      plugins = with pkgs.tmuxPlugins; [
-        sensible
-	tmux-powerline
-      ];
     };
   };
 
@@ -199,8 +102,6 @@
   # List services that you want to enable:
   services = {
     blueman.enable = true;
-    gnome.gnome-keyring.enable = true;
-    input-remapper.enable = true;
     openssh.enable = true;
     upower.enable = true;
 
