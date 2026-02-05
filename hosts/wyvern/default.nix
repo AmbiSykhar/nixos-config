@@ -37,7 +37,7 @@
   };
 
   networking = {
-    hostName = "ambi-laptop";
+    hostName = "wyvern";
     networkmanager.enable = true;
   };
 

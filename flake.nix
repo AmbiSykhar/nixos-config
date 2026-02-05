@@ -47,8 +47,8 @@
         modules = [ ./hosts/dragon ];
         specialArgs = { inherit inputs outputs; };
       };
-      "ambi-laptop" = lib.nixosSystem {
-        modules = [ ./hosts/ambi-laptop ];
+      "wyvern" = lib.nixosSystem {
+        modules = [ ./hosts/wyvern ];
         specialArgs = { inherit inputs outputs; };
       };
     };
@@ -59,13 +59,13 @@
         pkgs = pkgsFor.x86_64-linux;
         extraSpecialArgs = { inherit inputs outputs; };
       };
-      "ambi@ambi-laptop" = lib.homeManagerConfiguration {
-        modules = [ ./home/ambi/ambi-laptop.nix ];
+      "ambi@wyvern" = lib.homeManagerConfiguration {
+        modules = [ ./home/ambi/wyvern.nix ];
         pkgs = pkgsFor.x86_64-linux;
         extraSpecialArgs = { inherit inputs outputs; };
       };
-      "zygan@ambi-laptop" = lib.homeManagerConfiguration {
-        modules = [ ./home/zygan/ambi-laptop.nix ];
+      "zygan@wyvern" = lib.homeManagerConfiguration {
+        modules = [ ./home/zygan/wyvern.nix ];
         pkgs = pkgsFor.x86_64-linux;
         extraSpecialArgs = { inherit inputs outputs; };
       };
