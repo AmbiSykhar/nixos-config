@@ -169,6 +169,14 @@
         "Ctrl+Alt+Delete".action.quit = [];
 
         "Mod+Shift+P".action.power-off-monitors = [];
+
+        "XF86MonBrightnessDown".action.spawn-sh = "brightnessctl --class=backlight set 10%-";
+        "XF86MonBrightnessUp".action.spawn-sh = "brightnessctl --class=backlight set +10%";
+        "XF86AudioMute".action.spawn-sh = "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle";
+        "XF86AudioLowerVolume".action.spawn-sh = "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.05-";
+        "XF86AudioRaiseVolume".action.spawn-sh = "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.05+ -l 1.0";
+        "XF86AudioMicMute".action.spawn-sh = "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle";
+        # "XF86TouchpadOn".action.
       };
     };
   };
