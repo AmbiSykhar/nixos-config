@@ -16,6 +16,7 @@
     ../../users/zygan
 
     ../common/global
+    ../common/optional/gamemode.nix
   ];
 
   hardware.nvidia = {
@@ -26,15 +27,7 @@
     };
   };
 
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
-
-  boot = {
-    loader = {
-      systemd-boot.enable = true;
-      efi.canTouchEfiVariables = true;
-    };
-    kernelPackages = pkgs.linuxPackages_latest;
-  };
+  boot.kernelPackages = pkgs.linuxPackages_latest;
 
   networking = {
     hostName = "wyvern";
@@ -53,9 +46,6 @@
   #  options = [ "nofail" ];
   #};
 
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
-
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
@@ -65,7 +55,6 @@
 
   programs = {
     fish.enable = true;
-    gamemode.enable = true;
     neovim.enable = true;
     niri.enable = true;
 

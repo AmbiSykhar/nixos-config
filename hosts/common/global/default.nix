@@ -6,6 +6,7 @@
     ./kdeconnect.nix
     ./locale.nix
     ./nix.nix
+    ./systemd.nix
   ];
 
   home-manager = {
