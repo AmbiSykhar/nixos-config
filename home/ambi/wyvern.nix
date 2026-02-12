@@ -5,6 +5,7 @@
     ./global.nix
     ./features/desktop/niri
     ./features/gaming
+    ./features/gaming/vr
   ];
 
   programs.niri.settings.outputs = {

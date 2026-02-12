@@ -34,4 +34,6 @@
   services = {
     #swayidle.enable = true;
   };
+
+  home.file."Pictures/Wallpapers/wallpaper.png".source = ./wallpaper.png;
 }

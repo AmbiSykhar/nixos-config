@@ -9,7 +9,7 @@
         font = "JetBrainsMono Nerd Font:size=13";
         use-bold = "yes";
         line-height = 30;
-        lines = 20;
+        lines = 10;
         tabs = 2;
       };
       colors = {

@@ -8,7 +8,7 @@
     ./mako.nix
     ./niri.nix
     ./swaybg.nix
-    ./waybar.nix
+    ./waybar
   ];
 
   # xdg.configFile = {
