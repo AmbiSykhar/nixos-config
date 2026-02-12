@@ -1,0 +1,145 @@
+/* vim:fileencoding=utf-8:foldmethod=marker
+*/
+
+/* Define colors */
+/* {{{ */
+@define-color background rgba(17, 3, 43, 0.95); /*#11032b;*/
+@define-color background-active #6d1fbe;
+@define-color text #c1bbd6;
+@define-color text-active #ffc42a;
+@define-color text-inactive #a28cc4;
+@define-color border #a28cc4;
+
+@define-color warning #d8184d;
+/* }}} */
+
+/* Reset all styles */
+/* {{{ */
+* {
+  border: none;
+  border-radius: 0;
+  min-height: 0;
+  margin: 0;
+  padding: 0;
+  box-shadow: none;
+  text-shadow: none;
+  background: transparent;
+}
+
+window {
+  background: transparent;
+  font-family: "JetBrainsMono Nerd Font Propo";
+  font-size: 12pt;
+  font-weight: bold;
+  color: @text;
+}
+
+window#waybar.empty {
+  background: transparent;
+}
+
+label.module,
+box.module {
+  background: @background;
+  border-top: 1px solid @border;
+  border-bottom: 1px solid @border;
+}
+
+#custom-left-edge,
+#custom-right-edge,
+#custom-separator-thick {
+  /* background-size: 20px 35px; */
+  font-size: 0;
+  font-weight: bold;
+  color: transparent;
+  padding-left: 10px;
+  padding-right: 10px;
+  /* margin-bottom: 2px; */
+  /* margin-top: 2px; */
+  background: transparent;
+  border: none;
+}
+
+#custom-left-edge {
+  background-image: url("~/.config/waybar/assets/left-edge.png");
+}
+#custom-right-edge {
+  background-image: url("~/.config/waybar/assets/right-edge.png");
+}
+#custom-separator-thick {
+  background-image: url("~/.config/waybar/assets/separator.png");
+  background-color: @background;
+}
+
+#waybar.main #custom-weather,
+#waybar.main #clock {
+  padding-left: 6px;
+  padding-right: 6px;
+  background: @background;
+  font-size: 10pt;
+}
+
+#waybar.main #battery,
+#waybar.main #custom-nvidia,
+#waybar.main #cpu,
+#waybar.main #memory.ram,
+#waybar.main #pulseaudio,
+#waybar.main #gamemode,
+#waybar.main #temperature {
+  padding-left: 4px;
+  padding-right: 4px;
+  background: @background;
+  font-size: 10pt;
+}
+
+#waybar.main #gamemode {
+  border-top: 1px solid @border;
+  border-bottom: 1px solid @border;
+}
+
+#waybar.main #network,
+#waybar.main #bluetooth {
+  font-size: 12pt;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#waybar.main #custom-weather {
+  padding-right: 3pt;
+}
+
+#waybar.main #custom-trayicon {
+  font-size: 16pt;
+  color: white;
+  font-weight: bold;
+}
+
+#waybar.main #tray {
+  padding-left: 8px;
+}
+
+#waybar.main #tray menu {
+  background: @background;
+  border: 1px solid @border;
+}
+
+#waybar.main #workspaces button {
+  color: @text-inactive;
+}
+
+#waybar.main #workspaces button.active {
+  /* background: @background-active; */
+  color: @text-active;
+}
+
+#waybar.main #workspaces button.empty:not(.active) {
+  font-size: 0;
+  margin-left: -8px;
+  margin-right: -8px;
+}
+
+tooltip {
+  background-color: @background;
+  border: 1px solid @border;
+  font-weight: bold;
+}
