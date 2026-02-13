@@ -36,7 +36,7 @@
 
   hardware.nvidia.open = true;
 
-  boot.kernelPackages = pkgs.linuxPackages_latest;
+  # boot.kernelPackages = pkgs.linuxPackages_latest;
 
   # Configure keymap in X11
   services.xserver.xkb = {

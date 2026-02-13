@@ -23,7 +23,7 @@
   ];
 
   # Use latest kernel.
-  boot.kernelPackages = pkgs.linuxPackages_latest;
+  # boot.kernelPackages = pkgs.linuxPackages_latest;
 
   networking.hostName = "basilisk"; # Define your hostname.
   networking.networkmanager.enable = true;
