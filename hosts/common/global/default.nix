@@ -25,5 +25,5 @@
 
   hardware.enableRedistributableFirmware = true;
 
-  services.speechd.enable = lib.mkDefault false;
+  # services.speechd.enable = lib.mkDefault false;
 }
