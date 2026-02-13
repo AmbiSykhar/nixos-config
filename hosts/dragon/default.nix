@@ -12,7 +12,6 @@
       nix-fast-build
       colmena;
   })];
-  # nix.package = pkgs.lixPackageSets.stable.lix;
 
   imports = [
     inputs.nixos-hardware.nixosModules.common-cpu-amd-zenpower
@@ -24,6 +23,10 @@
     ../../users/ambi
 
     ../common/global
+    ../common/optional/gaming
+    ../common/optional/kdeconnect.nix
+    ../common/optional/niri.nix
+    ../common/optional/tuigreet.nix
   ];
 
   networking = {
@@ -33,13 +36,7 @@
 
   hardware.nvidia.open = true;
 
-  boot = {
-    loader = {
-      systemd-boot.enable = true;
-      efi.canTouchEfiVariables = true;
-    };
-    kernelPackages = pkgs.linuxPackages_latest;
-  };
+  boot.kernelPackages = pkgs.linuxPackages_latest;
 
   # Configure keymap in X11
   services.xserver.xkb = {
@@ -47,66 +44,32 @@
     variant = "";
   };
 
-  fileSystems."/home/ambi/Games" = {
+  fileSystems."/mnt/games" = {
     device = "/dev/disk/by-uuid/e24e9789-b4dd-4b13-bc0a-aa71683f9b8f";
     fsType = "ext4";
-    options = [ "nofail" ];
+    options = [
+      "users"
+      "exec"
+      "nofail"
+    ];
   };
-  fileSystems."/home/ambi/Storage" = {
+  fileSystems."/mnt/storage" = {
     device = "/dev/disk/by-uuid/605e2356-f115-49a8-a4b0-b3259fbed4b5";
     fsType = "ext4";
-    options = [ "nofail" ];
+    options = [
+      "users"
+      "exec"
+      "nofail"
+    ];
   };
-
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     lm_sensors
     openrgb-with-all-plugins
-    tuigreet
     home-manager
-    qbittorrent
   ];
-
-  programs = {
-    fish.enable = true;
-    gamemode.enable = true;
-    neovim.enable = true;
-    niri.enable = true;
-
-    bash = {
-      interactiveShellInit = ''
-        if [[ $(${pkgs.procps}/bin/ps --no-header --pid=$PPID --format=comm) != "fish" && -z ''${BASH_EXECUTION_STRING} ]] then
-          shopt -q login_shell && LOGIN_OPTION='--login' || LOGIN_OPTION=""
-          exec ${pkgs.fish}/bin/fish $LOGIN_OPTION
-        fi
-      '';
-    };
-
-    steam = {
-      enable = true;
-      remotePlay.openFirewall = true;
-      dedicatedServer.openFirewall = true;
-      protontricks.enable = true;
-      package = pkgs.steam.override {
-        extraPkgs = pkgs': with pkgs'; [
-          xorg.libXcursor
-          xorg.libXi
-          xorg.libXinerama
-          xorg.libXScrnSaver
-          libpng
-          libpulseaudio
-          libvorbis
-          stdenv.cc.cc.lib
-          libkrb5
-          keyutils
-        ];
-      };
-    };
-  };
 
   xdg.portal = {
     enable = true;
@@ -127,8 +90,6 @@
   services = {
     blueman.enable = true;
     hardware.openrgb.enable = true;
-    input-remapper.enable = true;
-    openssh.enable = true;
     qbittorrent.enable = true;
 
     mpd = {
@@ -136,20 +97,11 @@
         #dataDir = "/home/ambi/Music/mpd";
     };
 
-    greetd = {
-      enable = true;
-      settings = {
-        default_session = {
-	  command = "${pkgs.tuigreet}/bin/tuigreet --time --asterisks --remember --remember-user-session";
-	  user = "greeter";
-	};
-      };
-    };
     pipewire = {
       enable = true;
       alsa = {
         enable = true;
-	support32Bit = true;
+        support32Bit = true;
       };
       pulse.enable = true;
     };

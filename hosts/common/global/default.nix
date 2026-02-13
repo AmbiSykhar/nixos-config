@@ -3,9 +3,10 @@
 {
   imports = [
     inputs.home-manager.nixosModules.home-manager
-    ./kdeconnect.nix
+    ./fish.nix
     ./locale.nix
     ./nix.nix
+    ./openssh.nix
     ./systemd.nix
   ];
 

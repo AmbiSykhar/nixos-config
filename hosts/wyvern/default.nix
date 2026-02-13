@@ -13,13 +13,16 @@
     ./hardware-configuration.nix
 
     ../../users/ambi
+    ../../users/vivi
     ../../users/zygan
 
     ../common/global
-    ../common/optional/gamemode.nix
-
-    ../common/optional/steam.nix
-    ../common/optional/vr
+    ../common/optional/gaming
+    ../common/optional/gaming/steam-session.nix
+    ../common/optional/gaming/vr
+    ../common/optional/kdeconnect.nix
+    ../common/optional/niri.nix
+    ../common/optional/tuigreet.nix
   ];
 
   hardware.nvidia = {
@@ -43,54 +46,21 @@
     variant = "";
   };
 
-  #fileSystems."/home/ambi/Storage" = {
-  #  device = "/dev/disk/by-uuid/605e2356-f115-49a8-a4b0-b3259fbed4b5";
-  #  fsType = "ext4";
-  #  options = [ "nofail" ];
-  #};
+  fileSystems."/mnt/storage" = {
+    device = "/dev/disk/by-uuid/605e2356-f115-49a8-a4b0-b3259fbed4b5";
+    fsType = "ext4";
+    options = [
+      "users"
+      "exec"
+      "nofail"
+    ];
+  };
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    tuigreet
     home-manager
   ];
-
-  programs = {
-    fish.enable = true;
-    neovim.enable = true;
-    niri.enable = true;
-
-    bash = {
-      interactiveShellInit = ''
-        if [[ $(${pkgs.procps}/bin/ps --no-header --pid=$PPID --format=comm) != "fish" && -z ''${BASH_EXECUTION_STRING} ]] then
-    shopt -q login_shell && LOGIN_OPTION='--login' || LOGIN_OPTION=""
-    exec ${pkgs.fish}/bin/fish $LOGIN_OPTION
-        fi
-      '';
-    };
-
-    steam = {
-      enable = true;
-      remotePlay.openFirewall = true;
-      dedicatedServer.openFirewall = true;
-      protontricks.enable = true;
-      package = pkgs.steam.override {
-        extraPkgs = pkgs': with pkgs'; [
-          libxcursor
-          libxi
-          libxinerama
-          libxscrnsaver
-          libpng
-          libpulseaudio
-          libvorbis
-          stdenv.cc.cc.lib
-          libkrb5
-          keyutils
-        ];
-      };
-    };
-  };
 
   xdg.portal = {
     enable = true;
@@ -108,23 +78,13 @@
   # List services that you want to enable:
   services = {
     blueman.enable = true;
-    openssh.enable = true;
     upower.enable = true;
 
-    greetd = {
-      enable = true;
-      settings = {
-        default_session = {
-    command = "${pkgs.tuigreet}/bin/tuigreet --time --asterisks --remember --remember-user-session";
-    user = "greeter";
-  };
-      };
-    };
     pipewire = {
       enable = true;
       alsa = {
         enable = true;
-  support32Bit = true;
+        support32Bit = true;
       };
       pulse.enable = true;
     };
@@ -137,7 +97,7 @@
     soteria.enable = true;
   };
 
-  environment.variables.EDITOR = "nvim";
+  environment.variables.EDITOR = "hx";
 
   environment.sessionVariables = {
     ELECTRON_OZONE_PLATFORM_HINT = "wayland";
