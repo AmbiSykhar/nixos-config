@@ -1,4 +1,4 @@
-{ inputs, outputs, ... }:
+{ lib, inputs, outputs, ... }:
 
 {
   imports = [
@@ -25,5 +25,5 @@
 
   hardware.enableRedistributableFirmware = true;
 
-  services.speechd.enable = false;
+  services.speechd.enable = lib.mkDefault false;
 }

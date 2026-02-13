@@ -11,7 +11,7 @@ in {
 
       StreamLocalBindUnlink = "yes";
       GatewayPorts = "clientspecified";
-      AcceptEnv = "WAYLAND_DISPLAY";
+      AcceptEnv = [ "WAYLAND_DISPLAY" ];
       X11Forwarding = true;
     };
 

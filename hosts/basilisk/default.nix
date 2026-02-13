@@ -6,7 +6,7 @@
 
 {
   imports = [
-    inputs.nixos-hardware.nixosModules.apple-macmini
+    inputs.nixos-hardware.nixosModules.common-cpu-intel
 
     ./hardware-configuration.nix
 
