@@ -22,6 +22,8 @@
     xwayland-satellite
 
     protonvpn-gui # VPN GUI
+
+    telegram-desktop
   ];
 
   programs = {

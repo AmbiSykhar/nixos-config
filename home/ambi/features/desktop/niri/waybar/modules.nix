@@ -1,17 +1,17 @@
-{ config, ... }:
+{ config, pkgs, ... }:
 
 {
   programs.waybar.settings.mainBar = {
     "custom/left-edge" = {
-      format = "";
+      format = " ";
       tooltip = false;
     };
     "custom/separator" = {
-      format = "";
+      format = " ";
       tooltip = false;
     };
     "custom/right-edge" = {
-      format = "";
+      format = " ";
       tooltip = false;
     };
 
@@ -34,7 +34,7 @@
     };
     "custom/niri-columns" = {
       format = "{text}";
-      exec = "${config.xdg.configHome}/waybar/assets/niri-columns.js";
+      exec = "${pkgs.nodejs}/bin/node ${config.xdg.configHome}/waybar/assets/niri-columns.js";
       restart-interval = 10;
       return-type = "json";
     };
@@ -83,6 +83,7 @@
     "custom/nvidia" = {
       interval = 5;
       exec = "${config.xdg.configHome}/waybar/assets/nvidia.sh";
+      return-type = "json";
       min-length = 5;
       format = "󰢮 {text}";
       states = {
@@ -102,6 +103,11 @@
       };
       tooltip = true;
       tooltip-format = "{used}/{total} GiB";
+    };
+    "bluetooth" = {
+      format = "";
+      format-disabled = "";
+      format-connected = "󰂰";
     };
     "pulseaudio#output" = {
       format = "{icon} {volume}%";
@@ -132,7 +138,7 @@
     "clock" = {
       interval = 1;
       format = " {:%a %m/%d %H:%M}";
-    }
+    };
 
   };
 }

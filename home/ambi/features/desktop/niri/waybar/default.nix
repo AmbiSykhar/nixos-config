@@ -14,7 +14,7 @@
 				name = "main";
 				layer = "top";
 				position = "top";
-				height = 26;
+				height = 31;
 				margin = "4 4 0 4";
 				spacing = 0;
 				exclusive = true;

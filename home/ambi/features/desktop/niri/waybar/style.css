@@ -47,8 +47,8 @@ box.module {
 
 #custom-left-edge,
 #custom-right-edge,
-#custom-separator-thick {
-  /* background-size: 20px 35px; */
+#custom-separator {
+  background-size: 20px 35px;
   font-size: 0;
   font-weight: bold;
   color: transparent;
@@ -61,13 +61,13 @@ box.module {
 }
 
 #custom-left-edge {
-  background-image: url("~/.config/waybar/assets/left-edge.png");
+  background-image: url("assets/left-edge.png");
 }
 #custom-right-edge {
-  background-image: url("~/.config/waybar/assets/right-edge.png");
+  background-image: url("assets/right-edge.png");
 }
-#custom-separator-thick {
-  background-image: url("~/.config/waybar/assets/separator.png");
+#custom-separator {
+  background-image: url("assets/separator.png");
   background-color: @background;
 }
 
