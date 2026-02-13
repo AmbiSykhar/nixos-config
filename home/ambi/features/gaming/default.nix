@@ -4,7 +4,7 @@
   home.packages = with pkgs; [
     archipelago   # Multigame multiworld randomizer
     itch          # Indie game platform
-    melonDS       # NDS Emulator
+    melonds       # NDS Emulator
     mgba          # GBA emulator
     poptracker    # Randomizer tracker
     prismlauncher # Minecraft launcher
