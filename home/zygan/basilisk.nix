@@ -1,0 +1,9 @@
+{ ... }:
+
+{
+  imports = [
+    ./global.nix
+    ./features/desktop
+    ./features/gaming
+  ];
+}

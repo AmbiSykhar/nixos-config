@@ -51,6 +51,10 @@
         modules = [ ./hosts/wyvern ];
         specialArgs = { inherit inputs outputs; };
       };
+      "basilisk" = lib.nixosSystem {
+        modules = [ ./hosts/basilisk ];
+        specialArgs = { inherit inputs outputs; };
+      };
     };
 
     homeConfigurations = {
@@ -59,6 +63,7 @@
         pkgs = pkgsFor.x86_64-linux;
         extraSpecialArgs = { inherit inputs outputs; };
       };
+
       "ambi@wyvern" = lib.homeManagerConfiguration {
         modules = [ ./home/ambi/wyvern.nix ];
         pkgs = pkgsFor.x86_64-linux;
@@ -66,6 +71,27 @@
       };
       "zygan@wyvern" = lib.homeManagerConfiguration {
         modules = [ ./home/zygan/wyvern.nix ];
+        pkgs = pkgsFor.x86_64-linux;
+        extraSpecialArgs = { inherit inputs outputs; };
+      };
+      "vivi@wyvern" = lib.homeManagerConfiguration {
+        modules = [ ./home/vivi/wyvern.nix ];
+        pkgs = pkgsFor.x86_64-linux;
+        extraSpecialArgs = { inherit inputs outputs; };
+      };
+
+      "ambi@basilisk" = lib.homeManagerConfiguration {
+        modules = [ ./home/ambi/basilisk.nix ];
+        pkgs = pkgsFor.x86_64-linux;
+        extraSpecialArgs = { inherit inputs outputs; };
+      };
+      "vivi@basilisk" = lib.homeManagerConfiguration {
+        modules = [ ./home/vivi/basilisk.nix ];
+        pkgs = pkgsFor.x86_64-linux;
+        extraSpecialArgs = { inherit inputs outputs; };
+      };
+      "zygan@basilisk" = lib.homeManagerConfiguration {
+        modules = [ ./home/zygan/basilisk.nix ];
         pkgs = pkgsFor.x86_64-linux;
         extraSpecialArgs = { inherit inputs outputs; };
       };
