@@ -57,9 +57,10 @@
     };
     "battery" = {
       format = "{icon} {capacity}%";
-      format-icons = [ "󰂎" "󱊡" "󱊢" "󱊣" ];
-      format-charging = "c {capacity}%";
-      format-charging-icons = [ "󰢟" "󱊤" "󱊥" "󱊦" ];
+      format-icons = {
+        default = [ "󰂎" "󱊡" "󱊢" "󱊣" ];
+        charging = [ "󰢟" "󱊤" "󱊥" "󱊦" ];
+      };
       min-length = 5;
       interval = 5;
       tooltip = false;
