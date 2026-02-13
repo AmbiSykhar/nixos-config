@@ -50,7 +50,8 @@
     };
     "network#info" = {
       interval = 10;
-      format = "󱘖";
+      format = "";
+      format-disconnected = "󱘖";
       on-click = "kitty nmtui";
       tooltip = false;
     };
