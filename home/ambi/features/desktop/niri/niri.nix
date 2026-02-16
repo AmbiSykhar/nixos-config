@@ -54,6 +54,10 @@
           draw-border-with-background = false;
           clip-to-geometry = true;
         }
+        {
+          matches = [ { app-id = "org.pulseaudio.pavucontrol"; } ];
+          open-floating = true;
+        }
       ];
 
       binds = {
