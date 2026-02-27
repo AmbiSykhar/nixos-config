@@ -5,6 +5,8 @@
     systems.url = "github:nix-systems/default-linux";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
 
+    nix-colors.url = "github:misterio77/nix-colors";
+
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
