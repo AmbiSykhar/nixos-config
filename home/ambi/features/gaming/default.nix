@@ -8,6 +8,7 @@
     mgba          # GBA emulator
     poptracker    # Randomizer tracker
     prismlauncher # Minecraft launcher
+    shipwright    # Ocarina of Time PC Port
     vintagestory  # Survival game
     xivlauncher   # Final Fantasy XIV
   ];
