@@ -90,7 +90,7 @@
   services = {
     blueman.enable = true;
     hardware.openrgb.enable = true;
-    qbittorrent.enable = true;
+    # qbittorrent.enable = true;
 
     mpd = {
         enable = true;
