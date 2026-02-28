@@ -3,7 +3,7 @@
 {
   imports = [
     ./bat.nix
-    ./dienv.nix
+    ./direnv.nix
     ./eza.nix
     ./fish.nix
     ./git.nix
