@@ -36,8 +36,6 @@
 
   hardware.nvidia.open = true;
 
-  # boot.kernelPackages = pkgs.linuxPackages_latest;
-
   # Configure keymap in X11
   services.xserver.xkb = {
     layout = "us";
@@ -92,10 +90,10 @@
     hardware.openrgb.enable = true;
     # qbittorrent.enable = true;
 
-    mpd = {
-        enable = true;
-        #dataDir = "/home/ambi/Music/mpd";
-    };
+    # mpd = {
+    #     enable = true;
+    #     #dataDir = "/home/ambi/Music/mpd";
+    # };
 
     pipewire = {
       enable = true;
