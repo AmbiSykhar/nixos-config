@@ -9,6 +9,7 @@
     poptracker    # Randomizer tracker
     prismlauncher # Minecraft launcher
     shipwright    # Ocarina of Time PC Port
+    theclicker    # Autoclicker
     vintagestory  # Survival game
     xivlauncher   # Final Fantasy XIV
   ];
