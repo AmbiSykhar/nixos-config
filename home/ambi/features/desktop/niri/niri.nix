@@ -7,7 +7,7 @@
 
   programs.niri = {
     enable = true;
-    package = pkgs.niri;
+    # package = pkgs.niri;
 
     settings = {
       gestures = {
@@ -183,5 +183,14 @@
         # "XF86TouchpadOn".action.
       };
     };
+  };
+
+  xdg.portal = {
+    enable = true;
+    xdgOpenUsePortal = true;
+    extraPortals = with pkgs; [
+      xdg-desktop-portal-gtk
+      xdg-desktop-portal-gnome
+    ];
   };
 }
