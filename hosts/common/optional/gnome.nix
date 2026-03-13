@@ -1,6 +1,7 @@
 {
   services = {
     xserver = {
+      enable = true;
       desktopManager.gnome = {
         enable = true;
       };
@@ -9,7 +10,7 @@
         autoSuspend = false;
       };
     };
-    gnome.games.enable = true;
+    gnome.games.enable = false;
   };
   services.avahi.enable = false;
   networking.networkmanager.enable = false;
