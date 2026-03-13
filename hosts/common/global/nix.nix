@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 
 {
   nix = {
@@ -8,8 +8,14 @@
         "root"
         "@wheel"
       ];
+      auto-optimise-store = lib.mkDefault true;
       experimental-features = [ "nix-command" "flakes" ];
       warn-dirty = false;
+    };
+    gc = {
+      automatic = true;
+      dates = "daily";
+      options = "--delete-older-than 7d";
     };
   };
 }
