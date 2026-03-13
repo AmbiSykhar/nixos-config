@@ -19,7 +19,6 @@
     ../common/optional/gaming/steam-session.nix
     ../common/optional/gnome.nix
     ../common/optional/pipewire.nix
-    ../common/optional/qbittorrent.nix
     ../common/optional/wireless.nix
   ];
 

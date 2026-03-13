@@ -24,6 +24,8 @@
     protonvpn-gui # VPN GUI
 
     telegram-desktop
+    qbittorrent
+    vlc
   ];
 
   programs = {
