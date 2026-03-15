@@ -2,15 +2,27 @@
 
 {
   home.packages = with pkgs; [
-    archipelago   # Multigame multiworld randomizer
-    itch          # Indie game platform
-    melonds       # NDS Emulator
-    mgba          # GBA emulator
-    poptracker    # Randomizer tracker
+    osu-lazer-bin # Osu!
     prismlauncher # Minecraft launcher
     shipwright    # Ocarina of Time PC Port
-    theclicker    # Autoclicker
     vintagestory  # Survival game
     xivlauncher   # Final Fantasy XIV
+
+    # Platforms
+    itch          # Indie game platform
+
+    # Randomizers
+    archipelago   # Multigame multiworld randomizer
+    poptracker    # Randomizer tracker
+
+    # Emulators
+    azahar        # 3DS
+    cemu          # Wii U
+    dolphin-emu   # Gamecube + Wii
+    melonds       # NDS
+    mgba          # GBA
+
+     # Tools
+    theclicker    # Autoclicker
   ];
 }
