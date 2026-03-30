@@ -4,6 +4,6 @@
   imports = [
     ./global.nix
     ./features/desktop
-    ./features/gaming
+    # ./features/gaming
   ];
 }
