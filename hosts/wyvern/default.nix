@@ -22,7 +22,9 @@
     ../common/optional/gaming/vr
     ../common/optional/kdeconnect.nix
     ../common/optional/niri.nix
+    ../common/optional/pipewire.nix
     ../common/optional/tuigreet.nix
+    ../common/optional/wireless.nix
   ];
 
   hardware.nvidia = {
@@ -33,18 +35,7 @@
     };
   };
 
-  # boot.kernelPackages = pkgs.linuxPackages_latest;
-
-  networking = {
-    hostName = "wyvern";
-    networkmanager.enable = true;
-  };
-
-  # Configure keymap in X11
-  services.xserver.xkb = {
-    layout = "us";
-    variant = "";
-  };
+  networking.hostName = "wyvern";
 
   fileSystems."/mnt/storage" = {
     device = "/dev/disk/by-uuid/605e2356-f115-49a8-a4b0-b3259fbed4b5";
@@ -77,23 +68,12 @@
 
   # List services that you want to enable:
   services = {
-    blueman.enable = true;
     upower.enable = true;
-
-    pipewire = {
-      enable = true;
-      alsa = {
-        enable = true;
-        support32Bit = true;
-      };
-      pulse.enable = true;
-    };
   };
 
   security = {
     pam.services.swaylock = {};
     polkit.enable = true;
-    rtkit.enable = true;
     soteria.enable = true;
   };
 
@@ -104,12 +84,6 @@
     OZONE_PLATFORM = "wayland";
     GDK_BACKEND = "wayland";
   };
-
-  # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
-  # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
