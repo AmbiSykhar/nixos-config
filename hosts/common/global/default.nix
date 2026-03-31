@@ -30,5 +30,7 @@
     daemon.enable = true;
   };
 
+  programs.appimage.enable = true;
+
   # services.speechd.enable = lib.mkDefault false;
 }
