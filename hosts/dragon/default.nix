@@ -29,6 +29,8 @@
     ../common/optional/pipewire.nix
     ../common/optional/tuigreet.nix
     ../common/optional/wireless.nix
+
+    ../common/optional/flatpak.nix
   ];
 
   networking = {
