@@ -4,7 +4,7 @@
   home.packages = with pkgs; [
     osu-lazer-bin # Osu!
     prismlauncher # Minecraft launcher
-    shipwright    # Ocarina of Time PC Port
+    # shipwright    # Ocarina of Time PC Port - Takes forever to build
     vintagestory  # Survival game
     xivlauncher   # Final Fantasy XIV
 
