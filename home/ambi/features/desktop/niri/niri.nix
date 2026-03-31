@@ -39,6 +39,20 @@
           inactive = { color = "#a28cc4"; };
           urgent = { color = "#d8184d"; };
         };
+        tab-indicator = {
+          enable = true;
+          hide-when-single-tab = true;
+          place-within-column = false;
+          gap = 0;
+          width = 4;
+          length.total-proportion = 0.25;
+          position = "left";
+          gaps-between-tabs = 4;
+          corner-radius = 0;
+          active = { color = "#ffc42a"; };
+          inactive = { color = "#a28cc4"; };
+          urgent = { color = "#d8184d"; };
+        };
       };
 
       prefer-no-csd = true;
