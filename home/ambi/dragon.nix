@@ -32,7 +32,7 @@
         y = 0;
       };
       scale = 1;
-      transform.rotation = 90;
+      transform.rotation = 270;
     };
   };
 }
