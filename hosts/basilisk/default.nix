@@ -25,6 +25,16 @@
   networking.hostName = "basilisk"; # Define your hostname.
   networking.networkmanager.enable = true;
 
+  fileSystems."/mnt/storage" = {
+    device = "/dev/disk/by-uuid/2ceb55f4-5d64-420d-bc95-53c0fb6ba119";
+    fsType = "ext4";
+    options = [
+      "users"
+      "exec"
+      "nofail"
+    ];
+  };
+
   # Configure keymap in X11
   services.xserver.xkb = {
     layout = "us";
