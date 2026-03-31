@@ -4,6 +4,7 @@
   imports = [
     ./global.nix
     ./features/desktop/niri
+    ./features/desktop/productivity
     ./features/gaming
   ];
 
