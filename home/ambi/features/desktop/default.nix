@@ -22,7 +22,7 @@
     wttrbar # Allows waybar to access weather
     xwayland-satellite
 
-    protonvpn-gui # VPN GUI
+    proton-vpn # VPN GUI
 
     telegram-desktop
     qbittorrent
