@@ -19,5 +19,6 @@
     nodePackages.nodejs # Javascript
     p7zip # 7zip
     proton-vpn-cli # VPN CLI
+    wl-clipboard-rs # Clipboard
   ];
 }
