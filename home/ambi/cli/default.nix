@@ -15,8 +15,8 @@
   ];
 
   home.packages = with pkgs; [
+    firewalld
     kew # TUI music player
-    nodePackages.nodejs # Javascript
     p7zip # 7zip
     proton-vpn-cli # VPN CLI
     wl-clipboard-rs # Clipboard

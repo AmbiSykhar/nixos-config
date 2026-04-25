@@ -1,6 +1,8 @@
 { pkgs, ... }:
 {
   home.packages = with pkgs; [
+    blockbench          # Low-poly 3D model editor
+    gimp                # Art program/image editor
     lmms                # DAW
     muse-sounds-manager # Musescore soundfont manager
     musescore           # Sheet music program
