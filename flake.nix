@@ -57,6 +57,10 @@
         modules = [ ./hosts/basilisk ];
         specialArgs = { inherit inputs outputs; };
       };
+      "hoard" = lib.nixosSystem {
+        modules = [ ./hosts/hoard ];
+        specialArgs = { inherit inputs outputs; };
+      };
     };
 
     homeConfigurations = {
@@ -94,6 +98,21 @@
       };
       "zygan@basilisk" = lib.homeManagerConfiguration {
         modules = [ ./home/zygan/basilisk.nix ];
+        pkgs = pkgsFor.x86_64-linux;
+        extraSpecialArgs = { inherit inputs outputs; };
+      };
+      "ambi@hoard" = lib.homeManagerConfiguration {
+        modules = [ ./home/ambi/hoard.nix ];
+        pkgs = pkgsFor.x86_64-linux;
+        extraSpecialArgs = { inherit inputs outputs; };
+      };
+      "vivi@hoard" = lib.homeManagerConfiguration {
+        modules = [ ./home/vivi/hoard.nix ];
+        pkgs = pkgsFor.x86_64-linux;
+        extraSpecialArgs = { inherit inputs outputs; };
+      };
+      "zygan@hoard" = lib.homeManagerConfiguration {
+        modules = [ ./home/zygan/hoard.nix ];
         pkgs = pkgsFor.x86_64-linux;
         extraSpecialArgs = { inherit inputs outputs; };
       };
