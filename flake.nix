@@ -16,6 +16,11 @@
       url = "github:sodiboo/niri-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    sysc-greet = {
+      url = "github:Nomadcxx/sysc-greet";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {
@@ -24,6 +29,7 @@
     home-manager,
     systems,
     niri-flake,
+    sysc-greet,
     ...
   } @ inputs :
   let
@@ -101,6 +107,7 @@
         pkgs = pkgsFor.x86_64-linux;
         extraSpecialArgs = { inherit inputs outputs; };
       };
+
       "ambi@hoard" = lib.homeManagerConfiguration {
         modules = [ ./home/ambi/hoard.nix ];
         pkgs = pkgsFor.x86_64-linux;

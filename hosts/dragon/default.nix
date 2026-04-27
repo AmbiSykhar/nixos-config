@@ -27,16 +27,13 @@
     ../common/optional/kdeconnect.nix
     ../common/optional/niri.nix
     ../common/optional/pipewire.nix
-    ../common/optional/tuigreet.nix
+    ../common/optional/greeter.nix
     ../common/optional/wireless.nix
 
     ../common/optional/flatpak.nix
   ];
 
-  networking = {
-    hostName = "dragon";
-    networkmanager.enable = true;
-  };
+  networking.hostName = "dragon";
 
   hardware.nvidia.open = true;
 
@@ -66,15 +63,6 @@
     openrgb-with-all-plugins
     # home-manager
   ];
-
-  # xdg.portal = {
-  #   enable = true;
-  #   xdgOpenUsePortal = true;
-  #   extraPortals = with pkgs; [
-  #     xdg-desktop-portal-gtk
-  #     xdg-desktop-portal-gnome
-  #   ];
-  # };
 
   fonts.packages = with pkgs; [
     nerd-fonts.jetbrains-mono
