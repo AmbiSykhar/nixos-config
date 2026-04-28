@@ -27,7 +27,7 @@
     ../common/optional/kdeconnect.nix
     ../common/optional/niri.nix
     ../common/optional/pipewire.nix
-    ../common/optional/greeter.nix
+    ../common/optional/tuigreet.nix
     ../common/optional/wireless.nix
 
     ../common/optional/flatpak.nix
